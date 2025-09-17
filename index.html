@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PlayStation — Universo Gamer</title>
+  <meta name="description" content="Portal temático PlayStation com informações sobre jogos atuais (FIFA, Forza, NBA, Madden) e foco em acessibilidade." />
+
+  <!-- Estilos: tema PlayStation + cores estilo Google como acento -->
+  <style>
+    :root{
+      --bg:#0b1220;           /* fundo escuro tipo PlayStation */
+      --card:#111827;         /* cartão escuro */
+      --muted:#9ca3af;
+      --accent-ps:#0070d1;    /* azul PlayStation-like */
+      /* Google-like accent colours (usadas como pequenas decorações) */
+      --g-red:#ea4335;
+      --g-yellow:#fbbc05;
+      --g-green:#34a853;
+      --g-blue:#4285f4;
+      --glass: rgba(255,255,255,0.04);
+      --radius:16px;
+      --focus: 3px solid rgba(66,133,244,0.25);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,var(--bg), #071022 140%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      line-height:1.45;
+      padding:24px;
+    }
+
+    .container{max-width:1100px;margin:0 auto}
+
+    header{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+    .logo{
+      width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent-ps),#0a58a8);display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:20px;box-shadow:0 6px 18px rgba(0,0,0,0.6)
+    }
+    h1{font-size:1.6rem;margin:0}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+
+    /* Intro card */
+    .intro{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:var(--radius);box-shadow:0 8px 24px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03);margin-bottom:20px}
+    .intro p{margin:0;color:#cfe6ff}
+
+    /* Grid com os cards de jogos */
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+    .card{background:var(--card);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:inset 0 -40px 80px rgba(0,0,0,0.25)}
+    .card h3{margin:0 0 6px}
+    .meta{font-size:0.85rem;color:var(--muted);margin-bottom:10px}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:0.75rem;padding:6px 8px;border-radius:999px;background:var(--glass);color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+
+    /* Botão principal com acessibilidade */
+    .primary-btn{
+      display:inline-block;padding:12px 18px;border-radius:12px;background:linear-gradient(90deg,var(--g-blue),var(--accent-ps));color:white;font-weight:600;border:none;cursor:pointer;text-decoration:none;box-shadow:0 8px 24px rgba(2,6,23,0.6);
+    }
+    .primary-btn:focus{outline:none;box-shadow:var(--focus)}
+    .sr-only{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+
+    /* Acessibilidade: foco visível para todos os botões/links */
+    button:focus, a:focus{outline:none;box-shadow:var(--focus)}
+
+    footer{margin-top:24px;color:var(--muted);font-size:0.9rem}
+
+    /* Responsividade */
+    @media (max-width:520px){
+      header{flex-direction:row;gap:10px}
+      .logo{width:52px;height:52px}
+    }
+
+    /* Estilos adicionais para contraste e interatividade */
+    .card .cta{display:flex;gap:8px;align-items:center;margin-top:12px}
+    .cta .btn{padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;cursor:pointer}
+    .cta .btn:focus{outline:none}
+
+    /* Pequeno destaque visual com cores Google */
+    .accent-row{display:flex;gap:6px;margin-top:12px}
+    .g-dot{width:10px;height:10px;border-radius:50%}
+    .g-red{background:var(--g-red)}.g-yellow{background:var(--g-yellow)}.g-green{background:var(--g-green)}.g-blue{background:var(--g-blue)}
+
+    /* Melhor legibilidade do texto em cards */
+    .card p{color:#c9def8;margin:8px 0 0}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo" aria-hidden="true">PS</div>
+      <div>
+        <h1>Universo PlayStation — Portfólio Gamer</h1>
+        <p class="lead">Um espaço dedicado à minha profissão, paixão por jogos e pela comunidade de jogadores.</p>
+      </div>
+    </header>
+
+    <section class="intro" aria-labelledby="intro-title">
+      <h2 id="intro-title" style="font-size:1.05rem;margin-bottom:8px">Sobre minha profissão e paixão</h2>
+      <p>
+        Sou profissional da indústria de jogos (designer/desenvolvedor/criador de conteúdo) e fascinado pelo universo dos players: a cultura, o design das experiências e o impacto social dos jogos.
+        Este site é uma vitrine temática com informações sobre títulos atuais, pensado com foco em acessibilidade, clareza e visual inspirado no PlayStation.
+      </p>
+
+      <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+        <button class="primary-btn" id="mainAction" aria-label="Explorar jogos e novidades" title="Explorar jogos e novidades">Explore os jogos</button>
+        <a href="#catalog" class="primary-btn" style="background:linear-gradient(90deg,var(--g-green),var(--g-blue));">Ir para catálogo</a>
+      </div>
+    </section>
+
+    <main id="catalog" aria-live="polite">
+      <h2 style="margin-bottom:10px">Jogos em destaque</h2>
+      <div class="grid">
+
+        <!-- Card: FIFA -->
+        <article class="card" tabindex="0" aria-labelledby="fifa-title">
+          <h3 id="fifa-title">FIFA (série)</h3>
+          <div class="meta">Gênero: Esporte • Plataforma: PlayStation • Público: Global</div>
+          <p>FIFA é uma das maiores franquias de futebol; apresenta modos de carreira, FUT e partidas online com forte comunidade competitiva.</p>
+          <div class="tags" aria-hidden="true">
+            <span class="tag">Competitivo</span>
+            <span class="tag">Multiplayer</span>
+            <span class="tag">Atualizações anuais</span>
+          </div>
+          <div class="cta">
+            <button class="btn" data-game="FIFA" aria-label="Saiba mais sobre FIFA">Saiba mais</button>
+            <button class="btn" data-fav="FIFA" aria-pressed="false">Adicionar aos favoritos</button>
+          </div>
+          <div class="accent-row" aria-hidden="true">
+            <div class="g-dot g-blue"></div><div class="g-dot g-green"></div><div class="g-dot g-yellow"></div>
+          </div>
+        </article>
+
+        <!-- Card: Forza -->
+        <article class="card" tabindex="0" aria-labelledby="forza-title">
+          <h3 id="forza-title">Forza (série)</h3>
+          <div class="meta">Gênero: Corrida • Plataforma: Xbox/PC (com versões e similares em PlayStation via franquias de corrida)</div>
+          <p>Forza é uma referência em simulação e arcade de corrida, com atenção ao detalhe veicular, físicas e amplos mundos abertos em títulos recentes.</p>
+          <div class="tags">
+            <span class="tag">Simulação</span>
+            <span class="tag">Carros</span>
+            <span class="tag">Fotomode</span>
+          </div>
+          <div class="cta">
+            <button class="btn" data-game="Forza" aria-label="Saiba mais sobre Forza">Saiba mais</button>
+            <button class="btn" data-fav="Forza" aria-pressed="false">Adicionar aos favoritos</button>
+          </div>
+          <div class="accent-row" aria-hidden="true">
+            <div class="g-dot g-red"></div><div class="g-dot g-blue"></div>
+          </div>
+        </article>
+
+        <!-- Card: NBA -->
+        <article class="card" tabindex="0" aria-labelledby="nba-title">
+          <h3 id="nba-title">NBA (franquias esportivas)</h3>
+          <div class="meta">Gênero: Esporte • Plataforma: PlayStation</div>
+          <p>Jogos de basquete trazem experiência de temporada, modos carreira e campeonatos online com forte comunidade competitiva e criativa.</p>
+          <div class="tags">
+            <span class="tag">Modo carreira</span>
+            <span class="tag">E-sports</span>
+          </div>
+          <div class="cta">
+            <button class="btn" data-game="NBA" aria-label="Saiba mais sobre jogos de NBA">Saiba mais</button>
+            <button class="btn" data-fav="NBA" aria-pressed="false">Adicionar aos favoritos</button>
+          </div>
+          <div class="accent-row" aria-hidden="true">
+            <div class="g-dot g-yellow"></div><div class="g-dot g-green"></div>
+          </div>
+        </article>
+
+        <!-- Card: Madden -->
+        <article class="card" tabindex="0" aria-labelledby="madden-title">
+          <h3 id="madden-title">Madden (NFL)</h3>
+          <div class="meta">Gênero: Esporte americano • Plataforma: PlayStation</div>
+          <p>Madden é o principal sim da NFL, com mecânicas táticas, modos de franquia e forte presença em ligas e campeonatos.</p>
+          <div class="tags">
+            <span class="tag">Tático</span>
+            <span class="tag">Liga</span>
+          </div>
+          <div class="cta">
+            <button class="btn" data-game="Madden" aria-label="Saiba mais sobre Madden">Saiba mais</button>
+            <button class="btn" data-fav="Madden" aria-pressed="false">Adicionar aos favoritos</button>
+          </div>
+          <div class="accent-row" aria-hidden="true">
+            <div class="g-dot g-green"></div><div class="g-dot g-blue"></div>
+          </div>
+        </article>
+
+      </div>
+    </main>
+
+    <footer>
+      <p>Feito com ❤️ para a comunidade gamer. Dicas de acessibilidade: navegue com Tab, use leitor de tela e prefira contraste alto.</p>
+    </footer>
+  </div>
+
+  <!-- Scripts: comportamento e acessibilidade -->
+  <script>
+    // Botão principal: rola até o catálogo e fornece feedback acessível
+    (function(){
+      const mainBtn = document.getElementById('mainAction');
+      const catalog = document.getElementById('catalog');
+      const favButtons = document.querySelectorAll('[data-fav]');
+
+      mainBtn.addEventListener('click', ()=>{
+        catalog.scrollIntoView({behavior:'smooth',block:'start'});
+        mainBtn.setAttribute('aria-disabled','true');
+        setTimeout(()=>mainBtn.removeAttribute('aria-disabled'),900);
+      });
+
+      // Favoritar (apenas demonstração): atualiza aria-pressed e fornece mensagem visualmente
+      favButtons.forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          const cur = btn.getAttribute('aria-pressed') === 'true';
+          btn.setAttribute('aria-pressed', String(!cur));
+          btn.textContent = cur ? 'Adicionar aos favoritos' : 'Remover dos favoritos';
+
+          // Live region: informamos mudança para leitores de tela
+          announce((!cur ? 'Adicionado ' : 'Removido ') + btn.dataset.fav + ' dos favoritos');
+        });
+      });
+
+      // 'Saiba mais' pequeno modal in-page acessível (progressivo)
+      const infoButtons = document.querySelectorAll('[data-game]');
+      infoButtons.forEach(b=>b.addEventListener('click', ()=>{
+        const game = b.dataset.game;
+        // Simples alerta aconselhando link externo — progressivo e acessível
+        alert('Saiba mais sobre: ' + game + '\n(Adicionar links, imagens ou modal com conteúdo detalhado aqui.)');
+      }));
+
+      // ARIA live region para notificações
+      const live = document.createElement('div');
+      live.setAttribute('aria-live','polite');
+      live.setAttribute('aria-atomic','true');
+      live.className='sr-only';
+      document.body.appendChild(live);
+      function announce(message){
+        live.textContent='';
+        setTimeout(()=>live.textContent=message,50);
+      }
+
+      // Pequena melhoria de foco: ao focar um card, realçar visualmente
+      document.querySelectorAll('.card').forEach(card=>{
+        card.addEventListener('focus', ()=>card.style.boxShadow='0 12px 30px rgba(2,6,23,0.8)');
+        card.addEventListener('blur', ()=>card.style.boxShadow='inset 0 -40px 80px rgba(0,0,0,0.25)');
+      });
+
+      // Tecla de atalho: 'g' leva ao catálogo (útil para testes de acessibilidade)
+      window.addEventListener('keydown', (e)=>{
+        if(e.key.toLowerCase()==='g' && !e.metaKey && !e.ctrlKey){
+          e.preventDefault();
+          catalog.scrollIntoView({behavior:'smooth'});
+          announce('Indo para catálogo');
+        }
+      });
+
+    })();
+  </script>
+</body>
+</html>
